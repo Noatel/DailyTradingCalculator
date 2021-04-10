@@ -12,11 +12,16 @@ There are three things you need to fill in
 We made this project because you dont need to greed to make profit,
 
 > When you doubt, zoom out
-When there is a dump, there is a pump
-When i give you an all time high, i give you a time to buy
-If you not apraise me at 50000 you dont deserve me at 60000
-bulls get profit, bears get profit, pigs get slaughtered
-Bitcoin has no top, because the dollar has no bottom
+> 
+> When there is a dump, there is a pump
+> 
+> When i give you an all time high, i give you a time to buy
+> 
+> If you not apraise me at 50000 you dont deserve me at 60000
+> 
+> Bulls get profit, bears get profit, pigs get slaughtered
+> 
+> Bitcoin has no top, because the dollar has no bottom
 
 
 ## Installation
