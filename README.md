@@ -9,6 +9,8 @@ There are three things you need to fill in
 - The amount of interest you want to earn
 - The amount of days you want a overview for
 
+
+This calculator gives you **no financial advice** and is just a indicator for yourself.
 We made this project because you dont need to greed to make profit,
 
 > When you doubt, zoom out
