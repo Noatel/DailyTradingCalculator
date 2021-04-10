@@ -11,6 +11,7 @@ There are three things you need to fill in
 
 
 This calculator gives you **no financial advice** and is just a indicator for yourself.
+
 We made this project because you dont need to greed to make profit,
 
 > When you doubt, zoom out
