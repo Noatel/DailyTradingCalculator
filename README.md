@@ -26,10 +26,6 @@ We made this project because you dont need to greed to make profit,
 
 ## Installation
 
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
-
-Install the dependencies and devDependencies and start the server.
-
 ```sh
 docker-compose build
 docker-compose up
