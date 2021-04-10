@@ -1,0 +1,53 @@
+version: '3'
+
+volumes:
+  db-data: {}
+
+services:
+  php:
+    image: ${CI_REGISTRY_IMAGE}/php:${CI_COMMIT_SHA}
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    depends_on:
+      - db
+    environment:
+      - APP_NAME=${APP_NAME}
+      - APP_ENV=${APP_ENV}
+      - APP_KEY=${APP_KEY}
+      - APP_DEBUG=${APP_DEBUG}
+      - APP_URL=${APP_URL}
+      - LOG_CHANNEL=${LOG_CHANNEL}
+      - DB_CONNECTION=${DB_CONNECTION}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - BROADCAST_DRIVER=${BROADCAST_DRIVER}
+      - CACHE_DRIVER=${CACHE_DRIVER}
+      - QUEUE_CONNECTION=${QUEUE_CONNECTION}
+      - SESSION_DRIVER=${SESSION_DRIVER}
+      - SESSION_LIFETIME=${SESSION_LIFETIME}
+    working_dir: /var/www
+    expose:
+      - 9000
+    labels:
+      ci.notive.limits.cpus: 500m
+      ci.notive.limits.memory: 1024M
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db-data:/var/lib/mysql:rw
+    expose:
+      - 3306
+    labels:
+      ci.notive.volume.size: 5Gi
+      ci.notive.limits.cpu: 500m
+      ci.notive.limits.memory: 512M

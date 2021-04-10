@@ -1,0 +1,28 @@
+version: '3'
+
+volumes:
+  db-data: {}
+
+services:
+  php:
+    image: daytradingcalculator/php
+    environment:
+      - APP_ENV=${APP_ENV:-dev}
+    volumes:
+      - ./:/var/www
+    restart: "no"
+
+  db:
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./.data/mysql:/var/lib/mysql:rw
+    restart: "no"
+
+  nginx:
+    image: daytradingcalculator/nginx
+    volumes:
+      - ./public:/var/www/public
+    ports:
+      - 8080:80
+    restart: "no"
